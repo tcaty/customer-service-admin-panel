@@ -5,6 +5,10 @@
   width: 352px;
 }
 
+.order-creating__input-fields {
+  margin-bottom: 25px;
+}
+
 .order-creating__btn {
   width: 178px;
   margin: 0px auto;

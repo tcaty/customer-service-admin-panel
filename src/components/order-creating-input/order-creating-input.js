@@ -1,35 +1,27 @@
-import React from 'react';
-
-import { withValue } from '../hoc';
+import React, { useCallback } from 'react';
+import { Field } from 'react-final-form';
 
 import './order-creating-input.css';
 
-const OrderCreatingInput = ({ value, handleChange, label, userPhone, required }) => {
+const OrderCreatingInput = ({ label, name, required, userPhone }) => {
 
-  if (userPhone) {
-    return (
-      <div className="order-creating-input user-phone">
-        <input 
-          pattern="\+\d{11}"
-          type="text" 
-          value={value} 
-          onChange={handleChange} 
-          required/>
-        <label>{label}</label>
-      </div>
-    );
-  }
+  const getRenderedInput = useCallback((input, userPhone) => {
+    if (userPhone) {
+      return <input {...input} required pattern="\+\d{11}"/>;
+    }
+    return <input {...input} required={name === "middleName" ? required : true}/>;
+  }, [name, required]);
 
   return (
     <div className="order-creating-input">
-      <input 
-        type="text" 
-        value={value} 
-        onChange={handleChange} 
-        required={label === "Отчество" && required}/>
+      <Field name={name} type="text">
+        {
+          ({ input }) => getRenderedInput(input, userPhone)
+        }
+      </Field>
       <label>{label}</label>
     </div>
   );
 };
 
-export default withValue(OrderCreatingInput);
+export default OrderCreatingInput;

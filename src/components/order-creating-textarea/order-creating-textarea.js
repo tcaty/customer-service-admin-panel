@@ -1,16 +1,19 @@
 import React from 'react';
-
-import { withValue } from '../hoc';
+import { Field } from 'react-final-form';
 
 import './order-creating-textarea.css';
 
-const OrderCreatingTextarea = ({ value, handleChange, label }) => {
+const OrderCreatingTextarea = ({ label, name }) => {
   return (
     <div className="order-creating-textarea">
-      <textarea value={value} onChange={handleChange} maxLength="1024" required/>
+      <Field name={name} type="text">
+        {
+          ({ input }) => <textarea maxLength="1024" {...input} required/>
+        }
+      </Field>
       <label>{label}</label>
     </div>
   );
 };
 
-export default withValue(OrderCreatingTextarea);
+export default OrderCreatingTextarea;

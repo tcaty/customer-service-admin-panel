@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Field } from 'react-final-form';
 
 import './order-creating-checkbox.css';
 
-const OrderCreatingCheckbox = ({ onChange }) => {
-
-  const [checked, setChecked] = useState(false);
-
-  const soldCheckbox = ({ target: { checked } }) => {
-    setChecked(checked);
-    onChange(checked);
-  };
-
+const OrderCreatingCheckbox = ({ label, name }) => {
   return (
     <div className="order-creating-checkbox">
-      <input type="checkbox" checked={checked} onChange={soldCheckbox}/>
-      <label>Нет отчества</label>
+      <Field name={name} type="checkbox">
+        {
+          ({ input }) => <input {...input}/>
+        }
+      </Field>
+      <label>{label}</label>
     </div>
   );
 };

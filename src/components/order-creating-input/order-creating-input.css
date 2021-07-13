@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 .order-creating-input {
   width: 352px;
@@ -38,9 +37,4 @@
 
 .order-creating-input input:focus + label {
   color: #2F80ED;
-}
-
-.order-creating-input.phone-number input::placeholder {
-  content: "+ 7(···)·······";
-  opacity: 1;
 }
