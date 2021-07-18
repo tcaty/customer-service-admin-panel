@@ -35,7 +35,6 @@ const updateOrderList = (state, action) => {
 
     case FETCH_ORDERS_FAILURE:
       return {
-        ...state.orderList,
         orders: [],
         loading: false,
         error: action.payload,
