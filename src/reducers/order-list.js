@@ -4,15 +4,17 @@ import {
   FETCH_ORDERS_FAILURE
 } from '../actions/action-names';
 
+const initialOrderList = {
+  orders: [],
+  loading: true,
+  error: null,
+  total: 0
+};
+
 const updateOrderList = (state, action) => {
 
   if (state === undefined) {
-    return {
-      orders: [],
-      loading: true,
-      error: null,
-      total: 0
-    };
+    return initialOrderList;
   }
 
   switch (action.type) {
