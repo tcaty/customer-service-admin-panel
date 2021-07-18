@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+%flex-elem-center-height {
+  display: flex;
+  align-items: center;
+}
+
+.paginator-page-switch {
+  @extend %flex-elem-center-height;
+
+  button {
+    font-size: 27px;
+    color: rgba(0, 0, 0, 0.54);
+    
+    background-color: transparent;
+
+    svg {
+      @extend %flex-elem-center-height;
+    }
+  }
+
+  &__current-page-number {
+    padding: 0px 6px;
+    margin: 0px 8px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+  
+    border: 1px solid #1976D2;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.order-details-row {
+  padding: 20px 10px;
+  border-bottom: 1px solid #C4C4C4;
+
+  &__field-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  &__field-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #757575;
+  }
+}

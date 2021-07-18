@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.order-details {
+  width: 1300px;
+  margin: 0px auto;
+}
+
+.order-details__rows {
+  margin-bottom: 15px;
+}
+
+.order-details .delete-order-btn {
+  display: flex;
+  align-items: center;
+  padding: 6px 30px;
+  color: #ffffff;
+  background-color: #2F80ED;
+  border-radius: 4px;
+}
+
+.order-details .delete-order-btn:hover {
+  background-color: #2e75d3;
+}
+
+.order-details .delete-order-btn__text {
+  margin-right: 8px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 24px;
+}
+
+.order-details .delete-order-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+}

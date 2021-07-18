@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.paginator-rows-per-page label, .paginator-rows-per-page select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.paginator-rows-per-page label {
+  margin-right: 5px;
+}
+
+.paginator-rows-per-page select {
+  cursor: pointer;
+  background-color: transparent;
+}

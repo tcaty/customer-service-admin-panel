@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
+import Header from '../header';
 import OrderCreating from '../order-creating';
 
 const OrderCreatingPage = () => {
   return (
-    <main>
-      <OrderCreating />
-    </main>
+    <Fragment>
+      <Header />
+      <main>
+        <OrderCreating />
+      </main>
+    </Fragment>
   );
 };
 

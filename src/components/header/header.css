@@ -13,9 +13,15 @@
 }
 
 .nav__item {
-  color: #000000;
+  color: #ffffff;
   display: inline-block;
   padding: 20px 30px 23.5px 30px;
+  border-radius: 0px;
+  background-color: #2F80ED;
+}
+
+.nav .selected span {
+  color: #000000;
   border-radius: 15px 15px 0px 0px;
   background-color: #ffffff;
 }

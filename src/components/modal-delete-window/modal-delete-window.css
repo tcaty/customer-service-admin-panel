@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.modal-delete-window, .modal-delete-window .modal-header, .modal-delete-window .modal-body {
+  display: flex;
+  align-items: center;
+}
+
+.modal-delete-window {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.modal-delete-window .modal-header {
+  padding: 16px 27px;
+  margin: 0px auto;
+  background-color: #2F80ED;
+}
+
+.modal-delete-window .modal-header__icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.modal-delete-window .modal-header__text {
+  margin-right: 5px;
+}
+
+.modal-delete-window .modal-header__order-id {
+  margin-right: 8px;
+}
+
+.modal-delete-window .modal-header__cancel-btn {
+  color: #ffffff;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.modal-delete-window .modal-header__cancel-btn svg {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.modal-delete-window .modal-body {
+  padding: 11px 81px;
+  background-color: #ffffff;
+  justify-content: center;
+}
+
+.modal-delete-window .modal-body button {
+  padding: 6px 60px;
+  letter-spacing: 1.25px;
+  color: #2196F3;
+  background-color: rgba(44, 152, 240, 0.12);
+  border-radius: 4px;
+}
+
+.modal-delete-window .modal-body button:hover {
+  color: #ffffff;
+  background-color: #2F80ED;
+  box-shadow: 0px 5px 7px -3px rgba(34, 60, 80, 0.2);
+}
+
+.modal-delete-window .modal-body button:first-child {
+  margin-right: 28px;
+}

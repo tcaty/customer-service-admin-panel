@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.paginator-row-counter {
+  margin: 0px 19px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.54);
+
+  &__text {
+    margin: 0px 5px;
+  }
+}

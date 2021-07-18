@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.order-list-header {
+  padding: 17px 18px 17px 13px;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.56);
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.order-list-header__first-name {
+  width: 46px;
+  padding-left: 65px;
+  margin-right: 192px;
+}
+
+.order-list-header__last-name {
+  width: 116px;
+  margin-right: 160px;
+}
+
+.order-list-header .last-name__icon {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 2px;
+}
+
+.order-list-header__middle-name {
+  width: 90px;
+  margin-right: 175px;
+}
+
+.order-list-header__user-phone {
+  width: 65px;
+  margin-right: 247px;
+}
+
+.order-list-header__text {
+  width: 165px;
+}
+
+.order-list-header .last-name {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.error-message {
+  width: 296px;
+  display: flex;
+  text-align: center;
+  margin: 215px auto;
+  padding: 15px 10px;
+  border: 2px solid red;
+  color: rgb(224, 0, 0);
+  background-color: rgb(255, 213, 213);
+
+  &__text {
+    font-size: 20px;
+    font-family: Montserrat;
+    margin-right: 5px;
+  }
+
+  &__icon {
+    font-size: 22px;
+  }
+}

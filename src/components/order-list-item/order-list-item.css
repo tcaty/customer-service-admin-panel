@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.order-list-item {
+  padding: 6px 0px 13.4px 13px;
+  height: 89px;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.order-list-item a {
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.order-list-item__delete-order-btn {
+  margin-right: 36px;
+  font-size: 30px;
+  color: #807e7e;
+  background-color: transparent;
+}
+
+.order-list-item__delete-order-btn:hover {
+  color: #6b6a6a;
+}
+
+.order-list-item__first-name {
+  width: 110px;
+  margin-right: 103px;
+  display: flex;
+  align-items: center;
+}
+
+.order-list-item__last-name {
+  width: 110px;
+  margin-right: 147px;
+}
+
+.order-list-item__middle-name {
+  width: 160px;
+  margin-right: 106px;
+}
+
+.order-list-item__user-phone {
+  width: 160px;
+  margin-right: 150px;
+}
+
+.order-list-item__text {
+  width: 642px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

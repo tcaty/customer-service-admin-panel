@@ -2,15 +2,17 @@ import React, { useCallback } from 'react';
 import { Form } from 'react-final-form';
 
 import OrderCreatingInputFields from '../order-creating-input-fields';
+import { withDDPlanetService } from '../hoc';
 
 import './order-creating.css';
 
-const OrderCreating = () => {
+const OrderCreating = ({ ddPlanetService }) => {
 
-  const handleSubmit = useCallback((formObj) => {
-    console.log('ORDER CREATED!');
-    console.log(formObj);
-  }, []);
+  const handleSubmit = useCallback(formObj => {
+    ddPlanetService.createOrder(formObj)
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+  }, [ddPlanetService]);
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -30,4 +32,4 @@ const OrderCreating = () => {
   );
 };
 
-export default OrderCreating;
+export default withDDPlanetService(OrderCreating);

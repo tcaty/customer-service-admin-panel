@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+%font-styles {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.paginator-rows-per-page {
+
+  label {
+    margin-right: 5px;    
+    @extend %font-styles;
+  }
+  
+  select {
+    @extend %font-styles;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}

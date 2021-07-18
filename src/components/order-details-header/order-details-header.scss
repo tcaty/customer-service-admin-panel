@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.order-details-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-color: #2F80ED;
+
+  .order-number {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #ffffff;
+
+    display: inline-block;
+    padding: 20px 30px 23.5px 30px;
+    border-radius: 0px;
+    background-color: #2F80ED;
+
+    &__text {
+      margin-right: 10px;
+    }
+  }
+}
