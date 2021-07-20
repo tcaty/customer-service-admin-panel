@@ -67,7 +67,7 @@ const pageSwitchedToFirst = () => {
   }
 }
 
-// Wrappers for action creators
+// Wrappers for action creators 
 
 const fetchOrder = (dispatch, ddPlanetService) => (orderId) => {
   dispatch(fetchOrdersRequested());
@@ -92,7 +92,7 @@ const fetchOrders = (ddPlanetService) => async (dispatch, getState) => {
 
   const { total } = await ddPlanetService.getAllOrders(0, 0);
   const { orders } = await ddPlanetService.getAllOrders(0, total);
-  const filteredOrders = [...filterObjArrayBySubstr(orders, searchValue)];
+  const filteredOrders = filterObjArrayBySubstr(orders, searchValue);
 
   const newMaxPageNumber = changeMaxPageNumber(filteredOrders.length, rowsPerPage, dispatch);
 
