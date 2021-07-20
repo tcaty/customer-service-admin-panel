@@ -16,6 +16,20 @@ export default class DDPlanetService {
     return currentOrder[fieldName].toLowerCase() > prevOrder[fieldName].toLowerCase() ? 1 : -1;
   };
 
+  _transformOrder = ({ orderId, firstName, lastName, middleName, userPhone, text}) => ({
+    orderId,
+    firstName,
+    lastName,
+    middleName,
+    userPhone,
+    text
+  });
+
+  _transformAllOrders = (orders) => {
+    orders.sort(this._sortSettingsByField('lastName'));
+    return this._trasformAllUserPhones(orders.map(order => this._transformOrder(order)));
+  }
+
   getAllOrders = async (skip, take) => {
     const url = `/orders/getAllOrders/${skip}/${take}/`;
 
@@ -32,15 +46,13 @@ export default class DDPlanetService {
 
     const data = await res.json();
 
-    data.orders.sort(this._sortSettingsByField('lastName'))
-
     return {
       ...data,
-      orders: this._trasformAllUserPhones(data.orders)
+      orders: this._transformAllOrders(data.orders)
     };
   };
 
-  _transformOrder = (order) => {
+  _transformOrderForCreating = (order) => {
     const { withoutMiddleName = false, middleName = '' } = order;
     return {
       ...order,
@@ -57,7 +69,7 @@ export default class DDPlanetService {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this._transformOrder(order))
+      body: JSON.stringify(this._transformOrderForCreating(order))
     });
 
     if (!res.ok) {

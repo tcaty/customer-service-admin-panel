@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { MdErrorOutline } from 'react-icons/md';
+import { MdError } from 'react-icons/md';
 import { RiCloseFill } from 'react-icons/ri';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -21,7 +21,7 @@ const ModalDeleteWindow = ({ hideModal, orderId, deleteOrder }) => {
     <div className="modal-delete-window" onClick={hideModal}>
       <div className="modal-delete-window__content" onClick={e => e.stopPropagation()}>
         <div className="modal-delete-window__modal-header modal-header">
-          <div className="modal-header__icon"><MdErrorOutline /></div>
+          <div className="modal-header__icon"><MdError /></div>
           <div className="modal-header__text">
             Вы действительно хотите удалить обращение
           </div>

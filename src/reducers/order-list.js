@@ -1,7 +1,7 @@
 import {
   FETCH_ORDERS_REQUSTED,
   FETCH_ORDERS_SUCCESS,
-  FETCH_ORDERS_FAILURE
+  FETCH_ORDERS_FAILURE,
 } from '../actions/action-names';
 
 const updateOrderList = (state, action) => {

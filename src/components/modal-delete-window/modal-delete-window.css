@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-.modal-delete-window, .modal-delete-window .modal-header, .modal-delete-window .modal-body {
+.modal-delete-window, .modal-delete-window .modal-header, .modal-delete-window .modal-header__icon, .modal-delete-window .modal-body {
   display: flex;
   align-items: center;
 }

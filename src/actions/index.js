@@ -4,7 +4,12 @@ import {
   FETCH_ORDERS_REQUSTED,
   FETCH_ORDERS_SUCCESS,
   FETCH_ORDERS_FAILURE,
+  SEARCH_VALUE_CHANGED,
+  MAX_PAGE_NUMBER_CHANGED,
+  PAGE_SWITCHED_TO_FIRST
 } from './action-names';
+
+import { filterObjArrayBySubstr } from '../utils';
 
 // Action creators
 
@@ -42,6 +47,26 @@ const fetchOrdersFailure = (payload) => {
   }
 };
 
+const searchValueChanged = (payload) => {
+  return {
+    type: SEARCH_VALUE_CHANGED,
+    payload
+  }
+};
+
+const maxPageNumberChanged = (payload) => {
+  return {
+    type: MAX_PAGE_NUMBER_CHANGED,
+    payload
+  }
+};
+
+const pageSwitchedToFirst = () => {
+  return {
+    type: PAGE_SWITCHED_TO_FIRST
+  }
+}
+
 // Wrappers for action creators
 
 const fetchOrder = (dispatch, ddPlanetService) => (orderId) => {
@@ -51,16 +76,40 @@ const fetchOrder = (dispatch, ddPlanetService) => (orderId) => {
     .catch(error => fetchOrdersFailure(error));
 };
 
-const fetchOrders = (ddPlanetService) => (dispatch, getState) => {
+const changeMaxPageNumber = (total, rowsPerPage, dispatch) => {
+  const temp = Math.ceil(total / rowsPerPage);
+  const newMaxPageNumber = temp === 0 ? 1 : temp
+  dispatch(maxPageNumberChanged(newMaxPageNumber));
+  return newMaxPageNumber;
+};
+
+const fetchOrders = (ddPlanetService) => async (dispatch, getState) => {
   dispatch(fetchOrdersRequested());
 
-  const { paginator: { rowsPerPage, currentPageNumber } } = getState();
-  const skip = rowsPerPage * (currentPageNumber - 1);
-  const take = rowsPerPage;
+  const { paginator: { rowsPerPage, currentPageNumber }, searchPanel: { searchValue } } = getState();
+  let skip;
+  let take;
 
-  ddPlanetService.getAllOrders(skip, take)
-    .then(({ orders, total }) => dispatch(fetchOrdersSuccess({ orders, total })))
-    .catch(error => dispatch(fetchOrdersFailure(error)));
+  const { total } = await ddPlanetService.getAllOrders(0, 0);
+  const { orders } = await ddPlanetService.getAllOrders(0, total);
+  const filteredOrders = [...filterObjArrayBySubstr(orders, searchValue)];
+
+  const newMaxPageNumber = changeMaxPageNumber(filteredOrders.length, rowsPerPage, dispatch);
+
+  if (currentPageNumber > newMaxPageNumber) {
+    dispatch(pageSwitchedToFirst());
+    skip = 0;
+    take = rowsPerPage;
+  }
+  else {
+    skip = rowsPerPage * (currentPageNumber - 1);
+    take = skip + rowsPerPage;
+  }
+
+  dispatch(fetchOrdersSuccess({
+    orders: filteredOrders.slice(skip, take),
+    total: filteredOrders.length,
+  }))
 };
 
 const withFetchOrders = (callback) => (callbackArg) => {
@@ -72,6 +121,7 @@ const withFetchOrders = (callback) => (callbackArg) => {
 
 const changeRowsPerPage = withFetchOrders(rowsPerPageChanged);
 const switchPage = withFetchOrders(pageSwitched);
+const changeSearchValue = withFetchOrders(searchValueChanged);
 
 const deleteOrder = (ddPlanetService) => (orderId) => {
   return (dispatch, getState) => {
@@ -87,4 +137,5 @@ export {
   deleteOrder,
   changeRowsPerPage,
   switchPage,
+  changeSearchValue
 };

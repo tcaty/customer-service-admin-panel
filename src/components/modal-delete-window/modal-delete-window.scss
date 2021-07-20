@@ -29,6 +29,7 @@
     background-color: #2F80ED;
 
     &__icon {
+      @extend %flex-elem-center-height;
       margin-right: 10px;
 
       font-size: 20px;

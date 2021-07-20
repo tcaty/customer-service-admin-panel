@@ -17,7 +17,7 @@ const PaginatorRowCounter = ({ total, firstRowNumber, lastRowNumber }) => {
 
 const mapStateToProps = ({ orderList: { total }, paginator: { currentPageNumber, rowsPerPage } }) => {
   
-  const firstRowNumber = rowsPerPage * (currentPageNumber - 1) + 1;
+  const firstRowNumber = total > 0 ? rowsPerPage * (currentPageNumber - 1) + 1 : 0;
   const temp = firstRowNumber + rowsPerPage - 1;
   const lastRowNumber = temp > total ? total : temp;
   
