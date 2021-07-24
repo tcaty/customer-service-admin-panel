@@ -3,14 +3,19 @@ import { Field } from 'react-final-form';
 
 import './order-creating-input.css';
 
-const OrderCreatingInput = ({ label, name, required, userPhone }) => {
+const OrderCreatingInput = ({ label, name, withoutMiddleName, userPhone }) => {
 
   const getRenderedInput = useCallback((input, userPhone) => {
     if (userPhone) {
       return <input {...input} required pattern="\+\d{11}"/>;
     }
-    return <input {...input} required={name === "middleName" ? required : true}/>;
-  }, [name, required]);
+    return (
+      <input 
+        {...input} 
+        disabled={name === "middleName" ? withoutMiddleName : false}
+        required={name === "middleName" ? !withoutMiddleName : true}/>
+    );
+  }, [name, withoutMiddleName]);
 
   return (
     <div className="order-creating-input">
