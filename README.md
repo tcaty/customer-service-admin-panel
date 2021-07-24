@@ -30,4 +30,8 @@
 ## DDPlanetService tests
 ![image](https://user-images.githubusercontent.com/79706809/126867576-8eb0a6c7-77ff-4951-8a95-d6d360ade2d0.png)
 
+## All tests
+![image](https://user-images.githubusercontent.com/79706809/126879913-c889dc61-dfc9-46df-b188-187419107525.png)
+
+
 
