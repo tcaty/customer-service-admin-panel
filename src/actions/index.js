@@ -67,7 +67,7 @@ const pageSwitchedToFirst = () => {
   }
 }
 
-// Wrappers for action creators
+// Wrappers for action creators 
 
 const fetchOrder = (dispatch, ddPlanetService) => (orderId) => {
   dispatch(fetchOrdersRequested());

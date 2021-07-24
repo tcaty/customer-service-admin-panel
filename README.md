@@ -15,6 +15,9 @@
 ## Order list page with changed paginator settings
 ![image](https://user-images.githubusercontent.com/79706809/126065712-996b390d-c83c-44fb-86f9-429d5c84465d.png)
 
+## Order list page with changed search value
+![image](https://user-images.githubusercontent.com/79706809/126325463-760c73c2-1c46-41b5-bd5a-5843a1d325b5.png)
+
 ## Order list page modal delete window
 ![image](https://user-images.githubusercontent.com/79706809/126065799-a4a45002-3281-40f3-bc53-896d71d2bdf5.png)
 

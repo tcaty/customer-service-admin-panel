@@ -8,7 +8,7 @@ const initialOrderList = {
   orders: [],
   loading: true,
   error: null,
-  total: 0
+  total: 0,
 };
 
 const updateOrderList = (state, action) => {
