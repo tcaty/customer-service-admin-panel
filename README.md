@@ -27,3 +27,7 @@
 ## Order details page modal delete window
 ![image](https://user-images.githubusercontent.com/79706809/126065839-2b7d2d80-1e06-45f6-85fe-224514fd7cc6.png)
 
+## DDPlanetService tests
+![image](https://user-images.githubusercontent.com/79706809/126867576-8eb0a6c7-77ff-4951-8a95-d6d360ade2d0.png)
+
+
