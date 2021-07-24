@@ -23,7 +23,7 @@ describe('updateSearchPanel', () => {
     expect(updateSearchPanel(state, action)).toEqual(expectedSearchPanel);
   })
 
-  it('should return unchaged order list when it does not know received action type', () => {
+  it('should return unchaged search panel when it does not know received action type', () => {
 
     const state = {
       searchPanel: {
