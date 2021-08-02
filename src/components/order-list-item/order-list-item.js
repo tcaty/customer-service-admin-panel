@@ -25,7 +25,7 @@ const OrderListItem = (
           <div className="order-list-item__text">{text}</div>
         </div>
       </Link>
-      {isModalVisible ? <ModalDeleteWindow hideModal={hideModal} orderId={orderId}/> : null}
+      {isModalVisible && <ModalDeleteWindow hideModal={hideModal} orderId={orderId}/>}
     </div>
   );
 };

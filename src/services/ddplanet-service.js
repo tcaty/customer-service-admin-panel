@@ -2,7 +2,7 @@
 export default class DDPlanetService {
 
   _transformUserPhone = (userPhone) => {
-    return userPhone.slice(0, 2) + ' (' + userPhone.slice(2, 5) + ') ' + userPhone.slice(5, 8) + '-' + userPhone.slice(8, 10) + '-' + userPhone.slice(10) ;
+    return userPhone.slice(0, 12) + '-' + userPhone.slice(12, 14) + '-' + userPhone.slice(14);
   };
 
   _trasformAllUserPhones = (orders) => {
@@ -16,7 +16,7 @@ export default class DDPlanetService {
     return currentOrder[fieldName].toLowerCase() > prevOrder[fieldName].toLowerCase() ? 1 : -1;
   };
 
-  _transformOrder = ({ orderId, firstName, lastName, middleName, userPhone, text}) => ({
+  _transformOrder = ({ orderId, firstName, lastName, middleName, userPhone, text }) => ({
     orderId,
     firstName,
     lastName,

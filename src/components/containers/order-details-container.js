@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { withDDPlanetService } from '../hoc';
@@ -9,26 +9,21 @@ import LoadingIcon from '../loading-icon';
 import { fetchOrder } from '../../actions';
 import { compose } from '../../utils';
 
-class OrderDetailsContainer extends Component {
+const OrderDetailsContainer = ({ fetchOrder, orderId, order, loading, error }) => {
 
-  componentDidMount() {
-    const { fetchOrder, orderId } = this.props;
-    fetchOrder(orderId);   
+  useEffect(() => {
+    fetchOrder(orderId)
+  }, [fetchOrder, orderId]);
+
+  if (loading) {
+    return <LoadingIcon />;
   }
 
-  render() {
-    const { order, loading, error } = this.props;
-
-    if (loading) {
-      return <LoadingIcon />;
-    }
-
-    if (error) {
-      return <ErrorMessage />;
-    }
-
-    return <OrderDetails order={order}/>;
+  if (error) {
+    return <ErrorMessage />;
   }
+
+  return <OrderDetails order={order}/>;
 }
 
 const mapStateToProps = ({ orderList: { orders, loading, error } }) => {

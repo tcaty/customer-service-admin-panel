@@ -10,6 +10,7 @@ import './order-details.css';
 const OrderDetails = (
     { order: { orderId, firstName, lastName, middleName, userPhone, text }, isModalVisible, showModal, hideModal }
   ) => {
+
   return (
     <div className="order-details">
       <div className="order-details__rows">
@@ -23,7 +24,7 @@ const OrderDetails = (
         <span className="delete-order-btn__text">Удалить</span>
         <span className="delete-order-btn__icon"><FaTrash /></span>
       </button>
-      {isModalVisible ? <ModalDeleteWindow hideModal={hideModal} orderId={orderId}/> : null}
+      {isModalVisible && <ModalDeleteWindow hideModal={hideModal} orderId={orderId}/>}
     </div>
   );
 };

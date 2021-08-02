@@ -113,9 +113,9 @@ const fetchOrders = (ddPlanetService) => async (dispatch, getState) => {
 };
 
 const withFetchOrders = (callback) => (callbackArg) => {
-  return (ddPlanetService) => (dispatch, getState) => {
+  return (ddPlanetService) => async (dispatch, getState) => {
     dispatch(callback(callbackArg));
-    fetchOrders(ddPlanetService)(dispatch, getState);
+    await fetchOrders(ddPlanetService)(dispatch, getState);
   }
 };
 
